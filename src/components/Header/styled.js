@@ -47,6 +47,86 @@ const HeaderContainer = styled.header`
       height: 100%;
     }
   }
+
+  nav {
+    div {
+      display: flex;
+      position: absolute;
+      top: 75px;
+      right: 0px;
+      width: 100%;
+      height: 0px;
+      flex-direction: column;
+      gap: 0px;
+      background-color: var(--turquoise);
+      border-bottom: 2px solid var(--white-fixed);
+      transition: 0.6s;
+      opacity: 0;
+      overflow-y: hidden;
+
+      a {
+        height: 59px;
+        width: 100%;
+        border-radius: 0px;
+        display: flex;
+        justify-content: start;
+        padding-left: 15px;
+        text-decoration: none;
+        color: var(--black-blue);
+      }
+
+      svg {
+        margin-right: 12px;
+      }
+
+      a:hover {
+        color: var(--white-fixed);
+        background-color: var(--black-blue);
+      }
+    }
+  }
+
+  .active div {
+    opacity: 1;
+    height: 238px;
+  }
+
+  button {
+    background: none;
+    color: var(--black-blue);
+    border: none;
+    cursor: pointer;
+    border-top: 3px solid;
+    width: 25px;
+  }
+
+  button::after,
+  button::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.6s;
+    position: relative;
+  }
+
+  .active button {
+    border-top-color: transparent;
+  }
+
+  .active button::after {
+    transform: rotate(-135deg);
+    top: -10px;
+    border-radius: 4px;
+  }
+
+  .active button::before {
+    transform: rotate(135deg);
+    top: -3px;
+    border-radius: 4px;
+  }
 `;
 
 export default HeaderContainer;

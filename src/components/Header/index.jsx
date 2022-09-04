@@ -1,8 +1,21 @@
 import HeaderContainer from "./styled";
 import { GrLinkedinOption } from "react-icons/gr";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsEnvelope, BsFileEarmarkText } from "react-icons/bs";
+import { RiErrorWarningLine } from "react-icons/ri";
+import { AiOutlineRocket } from "react-icons/ai";
+import { useState } from "react";
 
 const Header = () => {
+  const [menuClass, setMenuClass] = useState(null);
+
+  const changeClass = () => {
+    if (menuClass) {
+      return setMenuClass(null);
+    }
+
+    return setMenuClass("active");
+  };
+
   return (
     <HeaderContainer>
       <section>
@@ -25,11 +38,22 @@ const Header = () => {
           </a>
         </div>
 
-        <nav>
-          <a href="">Sobre</a>
-          <a href="">Tecnologias</a>
-          <a href="">Projetos</a>
-          <a href="">Contato</a>
+        <nav className={menuClass}>
+          <button onClick={changeClass}></button>
+          <div>
+            <a href="">
+              <RiErrorWarningLine /> Sobre
+            </a>
+            <a href="">
+              <AiOutlineRocket /> Tecnologias
+            </a>
+            <a href="">
+              <BsFileEarmarkText /> Projetos
+            </a>
+            <a href="">
+              <BsEnvelope /> Contato
+            </a>
+          </div>
         </nav>
       </section>
     </HeaderContainer>
