@@ -1,5 +1,6 @@
 import About from "../components/About";
 import Header from "../components/Header";
+import TechsList from "../components/TechsList";
 
 const Page = () => {
   return (
@@ -7,6 +8,7 @@ const Page = () => {
       <Header />
       <main>
         <About />
+        <TechsList />
       </main>
     </>
   );
