@@ -57,6 +57,52 @@ const AboutContainer = styled.section`
     width: 90%;
     text-align: justify;
     font-size: 16px;
+    max-width: 750px;
+  }
+
+  @media (min-width: 700px) {
+    .about-principal-section {
+      flex-direction: row;
+      width: 90%;
+      justify-content: space-around;
+      margin: 88px 0px 70px;
+    }
+  }
+
+  @media (min-width: 780px) {
+    figure {
+      img {
+        width: 287px;
+        height: 287px;
+      }
+    }
+  }
+
+  @media (min-width: 800px) {
+    h1 {
+      font-size: 43px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 1222px) {
+    .about-principal-section {
+      justify-content: center;
+      gap: 110px;
+    }
+    h1 {
+      font-size: 70px;
+    }
+
+    h3 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 24px;
+    }
   }
 `;
 

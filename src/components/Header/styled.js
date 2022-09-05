@@ -17,6 +17,7 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    max-width: 1415px;
   }
 
   div {

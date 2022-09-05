@@ -19,14 +19,45 @@ const ProjectsContainer = styled.section`
     margin-bottom: 30px;
   }
 
+  div {
+    display: flex;
+    width: 100%;
+    margin-bottom: 45px;
+    padding: 0px 10px;
+  }
+
   ul {
-    margin-bottom: 30px;
     width: 100%;
     display: -webkit-inline-box;
     overflow-x: scroll;
-    margin-bottom: 45px;
     gap: 30px;
-    padding: 5px 25px;
+    padding: 5px 5px;
+  }
+
+  ul::-webkit-scrollbar {
+    height: 15px;
+  }
+
+  ul::-webkit-scrollbar-track {
+    background-color: var(--black-blue);
+    border-radius: 4px;
+  }
+
+  ul::-webkit-scrollbar-thumb {
+    background-color: var(--turquoise);
+    border-radius: 20px;
+  }
+
+  @media (min-width: 800px) {
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 1222px) {
+    h2 {
+      font-size: 40px;
+    }
   }
 `;
 

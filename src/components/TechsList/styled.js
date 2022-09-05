@@ -3,7 +3,7 @@ import styled from "styled-components";
 const TechsContainer = styled.section`
   background-color: var(--turquoise);
   font-family: "Open Sans", sans-serif;
-  padding-top: 35px;
+  padding-top: 100px;
   padding-left: 15px;
 
   h2 {
@@ -21,6 +21,40 @@ const TechsContainer = styled.section`
     overflow-x: scroll;
     margin-bottom: 45px;
     gap: 30px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+  }
+
+  ul::-webkit-scrollbar {
+    height: 15px;
+  }
+
+  ul::-webkit-scrollbar-track {
+    background-color: var(--turquoise);
+    border-radius: 4px;
+  }
+
+  ul::-webkit-scrollbar-thumb {
+    background-color: var(--black-blue);
+    border-radius: 20px;
+  }
+
+  @media (min-width: 700px) {
+    h2 {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 800px) {
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 1222px) {
+    h2 {
+      font-size: 40px;
+    }
   }
 `;
 

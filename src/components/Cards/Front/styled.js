@@ -40,6 +40,8 @@ const FrontCardContainer = styled.li`
   div {
     display: flex;
     gap: 20px;
+    margin: 0px;
+    padding: 0px;
   }
 
   a {
