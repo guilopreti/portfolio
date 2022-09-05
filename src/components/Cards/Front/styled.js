@@ -39,12 +39,15 @@ const FrontCardContainer = styled.li`
 
   div {
     display: flex;
-    gap: 15px;
+    gap: 20px;
   }
 
   a {
     text-decoration: none;
     color: var(--turquoise);
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 `;
 

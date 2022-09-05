@@ -20,11 +20,13 @@ const ProjectsContainer = styled.section`
   }
 
   ul {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 90%;
     margin-bottom: 30px;
+    width: 100%;
+    display: -webkit-inline-box;
+    overflow-x: scroll;
+    margin-bottom: 45px;
+    gap: 30px;
+    padding: 5px 25px;
   }
 `;
 
