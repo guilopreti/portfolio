@@ -16,7 +16,7 @@ const Projects = () => {
   }, [projectsType]);
 
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id="projects">
       <h2>PROJETOS</h2>
       <ul>
         {projects.map(

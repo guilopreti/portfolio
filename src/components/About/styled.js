@@ -8,6 +8,7 @@ const AboutContainer = styled.section`
   flex-direction: column;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 50px;
+  padding-top: 75px;
 
   figure {
     margin: 55px 0px 30px;

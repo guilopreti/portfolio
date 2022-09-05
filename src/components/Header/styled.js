@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   background-color: var(--turquoise);
+  font-family: "Open Sans", sans-serif;
   height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
+  position: fixed;
+  width: 100%;
+  border-bottom: 2px solid var(--white-fixed);
 
   section {
     display: flex;
@@ -126,6 +131,34 @@ const HeaderContainer = styled.header`
     transform: rotate(135deg);
     top: -3px;
     border-radius: 4px;
+  }
+
+  @media (min-width: 700px) {
+    button {
+      display: none;
+    }
+
+    nav {
+      div {
+        opacity: 1;
+        flex-direction: row;
+        position: inherit;
+        height: auto;
+        border-bottom: none;
+        gap: 15px;
+        align-items: center;
+
+        a {
+          padding: 8px;
+          height: auto;
+          border-radius: 20px;
+        }
+      }
+    }
+
+    .active div {
+      height: auto;
+    }
   }
 `;
 

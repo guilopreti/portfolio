@@ -6,7 +6,7 @@ const TechsList = () => {
   const techs = useSelector((state) => state.techs);
 
   return (
-    <TechsContainer>
+    <TechsContainer id="techs">
       <h2>TECNOLOGIAS E FERRAMENTAS</h2>
       <ul>
         {techs.map((tech) => {

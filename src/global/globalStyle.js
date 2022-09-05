@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
   --black-blue: #010118;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body, html,label,input,textarea {
  font-family: "Inter", sans-serif;
 }

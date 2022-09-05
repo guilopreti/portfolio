@@ -41,16 +41,16 @@ const Header = () => {
         <nav className={menuClass}>
           <button onClick={changeClass}></button>
           <div>
-            <a href="">
+            <a href="#" onClick={changeClass}>
               <RiErrorWarningLine /> Sobre
             </a>
-            <a href="">
+            <a href="#techs" onClick={changeClass}>
               <AiOutlineRocket /> Tecnologias
             </a>
-            <a href="">
+            <a href="#projects" onClick={changeClass}>
               <BsFileEarmarkText /> Projetos
             </a>
-            <a href="">
+            <a href="" onClick={changeClass}>
               <BsEnvelope /> Contato
             </a>
           </div>
