@@ -24,6 +24,52 @@ const ProjectsContainer = styled.section`
     width: 100%;
     margin-bottom: 45px;
     padding: 0px 10px;
+    justify-content: center;
+  }
+
+  .buttons-div {
+    display: flex;
+    gap: 20px;
+  }
+
+  button {
+    border: 4px solid var(--white-fixed);
+    padding: 8px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .button-front {
+    color: ${(props) =>
+      props.projects === "front" ? "var(--black-blue)" : "var(--turquoise)"};
+    background: ${(props) =>
+      props.projects === "front" ? "var(--turquoise)" : "var(--black-blue)"};
+  }
+
+  .button-back {
+    color: ${(props) =>
+      props.projects === "back" ? "var(--black-blue)" : "var(--turquoise)"};
+    background: ${(props) =>
+      props.projects === "back" ? "var(--turquoise)" : "var(--black-blue)"};
+  }
+
+  .loading-div {
+    padding: 0px;
+    margin: 0px;
+    animation: is-rotating 1s infinite;
+    border: 6px solid var(--black-blue);
+    border-radius: 50%;
+    border-top-color: var(--turquoise);
+    height: 50px;
+    width: 50px;
+  }
+
+  @keyframes is-rotating {
+    to {
+      transform: rotate(1turn);
+    }
   }
 
   ul {

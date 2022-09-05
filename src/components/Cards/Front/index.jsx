@@ -20,7 +20,7 @@ const FrontCard = ({
       <p>{description}</p>
       <p>Tecnologias: {techs.map((tech) => tech.name).join(", ")}</p>
 
-      <div>
+      <div className="preview-code-div">
         <a href={preview_url} target="_blank" rel="noreferrer">
           <AiOutlineLink /> Aplicação
         </a>

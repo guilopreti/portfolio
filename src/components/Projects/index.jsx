@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProjectsThunk } from "../../store/modules/Projects/thunks";
+import BackCard from "../Cards/Back";
 import FrontCard from "../Cards/Front";
 import ProjectsContainer from "./styled";
 
@@ -16,34 +17,52 @@ const Projects = () => {
   }, [projectsType]);
 
   return (
-    <ProjectsContainer id="projects">
+    <ProjectsContainer id="projects" projects={projectsType}>
       <h2>PROJETOS</h2>
+      {projects.length > 0 && (
+        <div className="buttons-div">
+          <button
+            className="button-front"
+            onClick={() => setProjectsType("front")}
+          >
+            Front-End
+          </button>
+          <button
+            className="button-back"
+            onClick={() => setProjectsType("back")}
+          >
+            Back-End
+          </button>
+        </div>
+      )}
       <div>
-        <ul>
-          {projects.map(
-            ({
-              id,
-              title,
-              description,
-              img_url,
-              preview_url,
-              code_url,
-              techs,
-            }) => {
-              return (
+        {projects.length ? (
+          <ul>
+            {projects.map((project) =>
+              projectsType === "front" ? (
                 <FrontCard
-                  key={id}
-                  title={title}
-                  description={description}
-                  img_url={img_url}
-                  preview_url={preview_url}
-                  code_url={code_url}
-                  techs={techs}
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  img_url={project.img_url}
+                  preview_url={project.preview_url}
+                  code_url={project.code_url}
+                  techs={project.techs}
                 />
-              );
-            }
-          )}
-        </ul>
+              ) : (
+                <BackCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  code_url={project.code_url}
+                  techs={project.techs}
+                />
+              )
+            )}
+          </ul>
+        ) : (
+          <div className="loading-div" />
+        )}
       </div>
     </ProjectsContainer>
   );
