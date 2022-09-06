@@ -38,9 +38,10 @@ li {
   background: var(--turquoise);
     color: var(--black-blue);
     font-size: 22px;
-    width: 35vw;
+    width: 90vw;
     max-width: 350px;
     padding: 30px 20px;
+    margin: auto;
 
     .Toastify__toast-icon {
       svg {
