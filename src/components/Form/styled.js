@@ -50,7 +50,8 @@ export const FormDivContainer = styled.div`
     padding-top: 10px;
   }
 
-  input {
+  input,
+  textarea {
     padding: 12px;
     background: var(--black-blue);
     color: var(--white-fixed);
@@ -58,6 +59,12 @@ export const FormDivContainer = styled.div`
     border-radius: 6px;
     width: 100%;
     font-size: 16px;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  textarea {
+    height: 145px;
   }
 
   label {
@@ -73,12 +80,14 @@ export const FormDivContainer = styled.div`
     pointer-events: none;
   }
 
-  input:focus {
+  input:focus,
+  textarea:focus {
     border-color: var(--turquoise);
     outline: 0px;
   }
 
-  input:focus ~ label {
+  input:focus ~ label,
+  textarea:focus ~ label {
     color: var(--turquoise);
     top: -10px;
     left: 8px;
@@ -86,6 +95,7 @@ export const FormDivContainer = styled.div`
   }
 
   input:hover,
+  textarea:hover,
   label:hover {
     border-color: var(--turquoise);
   }

@@ -7,6 +7,7 @@ const ContactContainer = styled.section`
   align-items: center;
   font-family: "Open Sans", sans-serif;
   padding-top: 80px;
+  padding-bottom: 50px;
 
   h2 {
     font-family: "Open Sans", sans-serif;

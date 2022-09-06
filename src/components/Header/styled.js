@@ -11,6 +11,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   width: 100%;
   border-bottom: 2px solid var(--white-fixed);
+  z-index: 999;
 
   section {
     display: flex;

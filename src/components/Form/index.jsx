@@ -71,7 +71,7 @@ const Form = () => {
         error={errors.message ? true : false}
         onChange={(e) => setMessageValue(e.target.value)}
       >
-        <input name="message" {...register("message")} />
+        <textarea name="message" {...register("message")} />
         <label>Mensagem</label>
         {errors.message && <span>{errors.message?.message}</span>}
       </FormDivContainer>
