@@ -34,6 +34,30 @@ li {
     list-style: none;
 }
 
+.toast-message {
+  background: var(--turquoise);
+    color: var(--black-blue);
+    font-size: 22px;
+    width: 35vw;
+    max-width: 350px;
+    padding: 30px 20px;
+
+    .Toastify__toast-icon {
+      svg {
+        fill: var(--black-blue)
+      }
+    }
+    
+    button {
+      color: var(--black-blue);
+    opacity: 1;
+    }
+
+    .Toastify__progress-bar {
+      background: var(--black-blue);
+    }
+}
+
 `;
 
 export default GlobalStyle;

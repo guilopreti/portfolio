@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormContainer, FormDivContainer } from "./styled";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Form = () => {
   const [nameValue, setNameValue] = useState(null);
@@ -30,7 +31,9 @@ const Form = () => {
         ...data,
         accessKey: "92cbb1b5-25bf-427c-9755-e266f58010f1",
       })
-      .then((resp) => console.log(resp))
+      .then((_) =>
+        toast.success("E-mail enviado!", { className: "toast-message" })
+      )
       .catch((err) => console.log(err));
   };
 
