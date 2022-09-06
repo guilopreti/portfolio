@@ -27,7 +27,6 @@ import {
   SiTrello,
   SiVisualstudiocode,
 } from "react-icons/si";
-import { Icon } from "@iconify/react";
 
 const techsState = [
   {

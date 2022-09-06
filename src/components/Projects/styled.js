@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const ProjectsContainer = styled.section`
-  background-color: var(--black-blue);
   color: var(--white-fixed);
   font-family: "Open Sans", sans-serif;
   padding-top: 75px;

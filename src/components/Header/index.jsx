@@ -50,7 +50,7 @@ const Header = () => {
             <a href="#projects" onClick={changeClass}>
               <BsFileEarmarkText /> Projetos
             </a>
-            <a href="" onClick={changeClass}>
+            <a href="#contact" onClick={changeClass}>
               <BsEnvelope /> Contato
             </a>
           </div>

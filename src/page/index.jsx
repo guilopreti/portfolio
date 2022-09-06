@@ -1,4 +1,5 @@
 import About from "../components/About";
+import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Projects from "../components/Projects";
 import TechsList from "../components/TechsList";
@@ -11,6 +12,7 @@ const Page = () => {
         <About />
         <TechsList />
         <Projects />
+        <Contact />
       </main>
     </>
   );

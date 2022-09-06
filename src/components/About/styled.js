@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const AboutContainer = styled.section`
-  background-color: var(--black-blue);
   color: var(--white-fixed);
   display: flex;
   align-items: center;

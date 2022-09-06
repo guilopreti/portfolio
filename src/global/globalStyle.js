@@ -18,6 +18,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--black-blue)
+}
+
 body, html,label,input,textarea {
  font-family: "Inter", sans-serif;
 }
