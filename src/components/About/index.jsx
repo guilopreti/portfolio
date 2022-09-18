@@ -22,7 +22,7 @@ const About = () => {
             Encantado pela tecnologia desde pequeno, iniciei minha jornada na
             programação em 2021 quando comecei o curso de Desenvolvimento Web
             FullStack da Kenzie Academy Brasil. Neste site deixei registrado
-            meus conhecimentos e prejetos que desenvolvi até então!
+            meus conhecimentos e projetos que desenvolvi até então!
           </p>
         </section>
       </section>
