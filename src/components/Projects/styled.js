@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ProjectsContainer = styled.section`
+  min-height: 665px;
   color: var(--white-fixed);
   font-family: "Open Sans", sans-serif;
   padding-top: 75px;

@@ -103,6 +103,12 @@ const AboutContainer = styled.section`
       font-size: 24px;
     }
   }
+
+  @media (min-height: 750px) {
+    .about-principal-section {
+      margin: 125px 0px 128px;
+    }
+  }
 `;
 
 export default AboutContainer;
