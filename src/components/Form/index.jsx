@@ -27,10 +27,7 @@ const Form = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("https://api.staticforms.xyz/submit", {
-        ...data,
-        accessKey: "92cbb1b5-25bf-427c-9755-e266f58010f1",
-      })
+      .post(process.env.REACT_APP_FORMSPREE_URL, data)
       .then((_) =>
         toast.success("E-mail enviado!", { className: "toast-message" })
       )

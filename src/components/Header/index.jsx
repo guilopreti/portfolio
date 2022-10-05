@@ -9,6 +9,14 @@ const Header = () => {
   const [menuClass, setMenuClass] = useState(null);
 
   const changeClass = () => {
+    if (
+      Number(
+        getComputedStyle(document.getElementById("root")).width.slice(0, -2)
+      ) >= 700
+    ) {
+      return false;
+    }
+
     if (menuClass) {
       return setMenuClass(null);
     }
