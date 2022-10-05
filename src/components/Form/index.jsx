@@ -5,12 +5,14 @@ import { FormContainer, FormDivContainer } from "./styled";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import InputMask from "react-input-mask";
 
 const Form = () => {
   const [nameValue, setNameValue] = useState(null);
   const [emailValue, setEmailValue] = useState(null);
   const [phoneValue, setPhoneValue] = useState(null);
   const [messageValue, setMessageValue] = useState(null);
+  const [mask, setMask] = useState("(99) 99999-9999");
 
   const formSchema = yup.object().shape({
     name: yup.string().required("Nome Obrigatório"),
@@ -62,7 +64,20 @@ const Form = () => {
         className="smaller-form-div"
         onChange={(e) => setPhoneValue(e.target.value)}
       >
-        <input name="phone" {...register("phone")} />
+        <InputMask
+          mask={mask}
+          {...register("phone")}
+          onBlur={(e) => {
+            if (e.target.value.replace("_", "").length === 14) {
+              setMask("(99) 9999-9999");
+            }
+          }}
+          onFocus={(e) => {
+            if (e.target.value.replace("_", "").length === 14) {
+              setMask("(99) 99999-9999");
+            }
+          }}
+        />
         <label>Telefone</label>
       </FormDivContainer>
 
