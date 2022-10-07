@@ -6,7 +6,9 @@ export const setProjectsThunk = (type) => (dispatch) => {
   setTimeout(
     () =>
       axios
-        .get(`https://guilopreti-portfolio.herokuapp.com/api/${type}/newest/`)
+        .get(
+          `https://guilopreti-portfolio-production.up.railway.app/api/${type}/newest/`
+        )
         .then((resp) => dispatch(setProjects(resp.data)))
         .catch((err) => console.log(err)),
     1000
