@@ -14,7 +14,7 @@ const Projects = () => {
 
   useEffect(() => {
     dispatch(setProjectsThunk(projectsType));
-  }, [projectsType]);
+  }, []);
 
   return (
     <ProjectsContainer id="projects" projects={projectsType}>
@@ -25,13 +25,19 @@ const Projects = () => {
             className="button-front"
             onClick={() => setProjectsType("front")}
           >
-            Front-End
+            Front End
           </button>
           <button
             className="button-back"
             onClick={() => setProjectsType("back")}
           >
-            Back-End
+            Back End
+          </button>
+          <button
+            className="button-full-stack"
+            onClick={() => setProjectsType("full-stack")}
+          >
+            Full Stack
           </button>
         </div>
       )}

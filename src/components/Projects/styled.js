@@ -55,6 +55,17 @@ const ProjectsContainer = styled.section`
       props.projects === "back" ? "var(--turquoise)" : "var(--black-blue)"};
   }
 
+  .button-full-stack {
+    color: ${(props) =>
+      props.projects === "full-stack"
+        ? "var(--black-blue)"
+        : "var(--turquoise)"};
+    background: ${(props) =>
+      props.projects === "full-stack"
+        ? "var(--turquoise)"
+        : "var(--black-blue)"};
+  }
+
   .loading-div {
     padding: 0px;
     margin: 0px;
