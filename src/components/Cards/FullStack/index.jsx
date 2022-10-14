@@ -19,22 +19,39 @@ const FrontCard = ({
 
   return (
     <FullStackCardContainer>
-      <h4>{title}</h4>
-      <figure>
-        <img src={img_url} alt={title} />
-        <figcaption>{title}</figcaption>
-      </figure>
-      <p>{description}</p>
-      <p>Tecnologias: {techs.map((tech) => tech.name).join(", ")}</p>
+      {type === "front" ? (
+        <>
+          <h4>{title}</h4>
+          <figure>
+            <img src={img_url} alt={title} />
+            <figcaption>{title}</figcaption>
+          </figure>
+          <p>{front_description}</p>
+          <p>Tecnologias: {front_techs.map((tech) => tech.name).join(", ")}</p>
 
-      <div className="preview-code-div">
-        <a href={preview_url} target="_blank" rel="noreferrer">
-          <AiOutlineLink /> Aplicação
-        </a>
-        <a href={code_url} target="_blank" rel="noreferrer">
-          <SiGithub /> Código
-        </a>
-      </div>
+          <div className="preview-code-div">
+            <a href={preview_url} target="_blank" rel="noreferrer">
+              <AiOutlineLink /> Aplicação
+            </a>
+            <a href={front_code_url} target="_blank" rel="noreferrer">
+              <SiGithub /> Código
+            </a>
+          </div>
+        </>
+      ) : (
+        <>
+          <h4>{title}</h4>
+
+          <p>{back_description}</p>
+          <p>Tecnologias: {back_techs.map((tech) => tech.name).join(", ")}</p>
+
+          <div className="preview-code-div">
+            <a href={both_techs} target="_blank" rel="noreferrer">
+              <SiGithub /> Código
+            </a>
+          </div>
+        </>
+      )}
     </FullStackCardContainer>
   );
 };
