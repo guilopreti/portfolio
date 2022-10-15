@@ -41,6 +41,12 @@ const ProjectsContainer = styled.section`
     cursor: pointer;
   }
 
+  button:hover {
+    color: var(--black-blue);
+    background: var(--turquoise);
+    filter: brightness(0.9);
+  }
+
   .button-front {
     color: ${(props) =>
       props.projects === "front" ? "var(--black-blue)" : "var(--turquoise)"};
@@ -55,13 +61,13 @@ const ProjectsContainer = styled.section`
       props.projects === "back" ? "var(--turquoise)" : "var(--black-blue)"};
   }
 
-  .button-full-stack {
+  .button-fullstack {
     color: ${(props) =>
-      props.projects === "full-stack"
+      props.projects === "fullstack"
         ? "var(--black-blue)"
         : "var(--turquoise)"};
     background: ${(props) =>
-      props.projects === "full-stack"
+      props.projects === "fullstack"
         ? "var(--turquoise)"
         : "var(--black-blue)"};
   }

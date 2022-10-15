@@ -24,6 +24,10 @@ const FooterContainer = styled.footer`
     cursor: pointer;
   }
 
+  button:hover {
+    filter: brightness(0.8);
+  }
+
   svg {
     width: 23px;
     height: 23px;

@@ -5,7 +5,7 @@ export const FullStackCardContainer = styled.li`
   background-color: var(--black-blue);
   color: var(--turquoise);
   border-radius: 20px;
-  min-height: 450px;
+  min-height: ${({ type }) => (type === "front" ? "450px" : "345px")};
   max-width: 400px;
   display: flex;
   flex-flow: row wrap;
@@ -13,6 +13,37 @@ export const FullStackCardContainer = styled.li`
   border: 5px solid;
   font-size: 14px;
   font-weight: 600;
+
+  .buttons-div {
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+
+    button {
+      font-size: 14px;
+      padding: 5px;
+      height: 35px;
+    }
+
+    button:nth-child(1) {
+      color: ${(props) =>
+        props.type === "front" ? "var(--black-blue)" : "var(--turquoise)"};
+      background: ${(props) =>
+        props.type === "front" ? "var(--turquoise)" : "var(--black-blue)"};
+    }
+
+    button:nth-child(2) {
+      color: ${(props) =>
+        props.type === "back" ? "var(--black-blue)" : "var(--turquoise)"};
+      background: ${(props) =>
+        props.type === "back" ? "var(--turquoise)" : "var(--black-blue)"};
+    }
+
+    button:hover {
+      color: var(--black-blue);
+      background: var(--turquoise);
+    }
+  }
 
   h4 {
     width: 100%;
@@ -43,7 +74,7 @@ export const FullStackCardContainer = styled.li`
     gap: 20px;
     margin: 0px;
     padding: 0px;
-    width: auto;
+    width: ${({ type }) => (type === "front" ? "auto" : "100%")};
   }
 
   a {

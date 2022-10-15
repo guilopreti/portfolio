@@ -3,7 +3,7 @@ import { AiOutlineLink } from "react-icons/ai";
 import { SiGithub } from "react-icons/si";
 import { useState } from "react";
 
-const FrontCard = ({
+const FullStackCard = ({
   title,
   front_description,
   back_description,
@@ -18,16 +18,26 @@ const FrontCard = ({
   const [type, setType] = useState("front");
 
   return (
-    <FullStackCardContainer>
+    <FullStackCardContainer type={type}>
+      <h4>{`${title} ${type === "back" ? "API" : ""}`}</h4>
+      <div className="buttons-div">
+        <button onClick={() => setType("front")}>Front End</button>
+        <button onClick={() => setType("back")}>Back End</button>
+      </div>
       {type === "front" ? (
         <>
-          <h4>{title}</h4>
           <figure>
             <img src={img_url} alt={title} />
             <figcaption>{title}</figcaption>
           </figure>
           <p>{front_description}</p>
-          <p>Tecnologias: {front_techs.map((tech) => tech.name).join(", ")}</p>
+          <p>
+            Tecnologias:{" "}
+            {front_techs
+              .concat(both_techs)
+              .map((tech) => tech.name)
+              .join(", ")}
+          </p>
 
           <div className="preview-code-div">
             <a href={preview_url} target="_blank" rel="noreferrer">
@@ -40,13 +50,17 @@ const FrontCard = ({
         </>
       ) : (
         <>
-          <h4>{title}</h4>
-
           <p>{back_description}</p>
-          <p>Tecnologias: {back_techs.map((tech) => tech.name).join(", ")}</p>
+          <p>
+            Tecnologias:{" "}
+            {back_techs
+              .concat(both_techs)
+              .map((tech) => tech.name)
+              .join(", ")}
+          </p>
 
           <div className="preview-code-div">
-            <a href={both_techs} target="_blank" rel="noreferrer">
+            <a href={back_code_url} target="_blank" rel="noreferrer">
               <SiGithub /> Código
             </a>
           </div>
@@ -56,4 +70,4 @@ const FrontCard = ({
   );
 };
 
-export default FrontCard;
+export default FullStackCard;

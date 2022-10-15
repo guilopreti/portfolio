@@ -27,6 +27,10 @@ export const FormContainer = styled.form`
     border-radius: 20px;
     cursor: pointer;
   }
+
+  button:hover {
+    filter: brightness(0.8);
+  }
 `;
 
 export const FormDivContainer = styled.div`

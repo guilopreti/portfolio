@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProjectsThunk } from "../../store/modules/Projects/thunks";
 import BackCard from "../Cards/Back";
 import FrontCard from "../Cards/Front";
+import FullStackCard from "../Cards/FullStack";
 import ProjectsContainer from "./styled";
 
 const Projects = () => {
@@ -12,8 +13,13 @@ const Projects = () => {
 
   const projects = useSelector((state) => state.projects);
 
+  const changeProjects = (type) => {
+    dispatch(setProjectsThunk(type));
+    setProjectsType(type);
+  };
+
   useEffect(() => {
-    dispatch(setProjectsThunk(projectsType));
+    dispatch(setProjectsThunk("front"));
   }, []);
 
   return (
@@ -23,19 +29,19 @@ const Projects = () => {
         <div className="buttons-div">
           <button
             className="button-front"
-            onClick={() => setProjectsType("front")}
+            onClick={() => changeProjects("front")}
           >
             Front End
           </button>
           <button
             className="button-back"
-            onClick={() => setProjectsType("back")}
+            onClick={() => changeProjects("back")}
           >
             Back End
           </button>
           <button
-            className="button-full-stack"
-            onClick={() => setProjectsType("full-stack")}
+            className="button-fullstack"
+            onClick={() => changeProjects("fullstack")}
           >
             Full Stack
           </button>
@@ -55,7 +61,7 @@ const Projects = () => {
                   code_url={project.code_url}
                   techs={project.techs}
                 />
-              ) : (
+              ) : projectsType === "back" ? (
                 <BackCard
                   key={project.id}
                   title={project.title}
@@ -63,6 +69,22 @@ const Projects = () => {
                   code_url={project.code_url}
                   techs={project.techs}
                 />
+              ) : projectsType === "fullstack" ? (
+                <FullStackCard
+                  key={project.id}
+                  title={project.title}
+                  img_url={project.img_url}
+                  preview_url={project.preview_url}
+                  front_description={project.front_description}
+                  back_description={project.back_description}
+                  front_code_url={project.front_code_url}
+                  back_code_url={project.back_code_url}
+                  front_techs={project.front_techs}
+                  back_techs={project.back_techs}
+                  both_techs={project.both_techs}
+                />
+              ) : (
+                false
               )
             )}
           </ul>
