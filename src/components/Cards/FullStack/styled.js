@@ -5,7 +5,8 @@ export const FullStackCardContainer = styled.li`
   background-color: var(--black-blue);
   color: var(--turquoise);
   border-radius: 20px;
-  min-height: ${({ type }) => (type === "front" ? "450px" : "345px")};
+  min-height: ${({ type }) => (type === "front" ? "450px" : "auto")};
+  height: ${({ type }) => (type === "back" ? "345px" : "auto")};
   max-width: 400px;
   display: flex;
   flex-flow: row wrap;
