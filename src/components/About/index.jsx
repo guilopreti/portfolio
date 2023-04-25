@@ -6,7 +6,7 @@ const About = () => {
       <section className="about-principal-section">
         <figure>
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-projects-61790.appspot.com/o/Gui_logo_borda.png?alt=media&token=a43bc560-83f7-4b03-9b7f-1999a6eb7d78"
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-projects-61790.appspot.com/o/Ilustra%20GUI%20vers%C3%A3o%202023.png?alt=media&token=327943c9-15f4-430e-ac93-7daaef819149"
             alt="Guilherme_Lopreti_Ilustração"
           />
           <figcaption>Guilherme Lopreti Imagem</figcaption>
