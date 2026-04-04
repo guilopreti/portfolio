@@ -6,9 +6,9 @@ export const setProjectsThunk = (type) => (dispatch) => {
   setTimeout(
     () =>
       axios
-        .get(`${process.env.REACT_APP_API_URL}/${type}/newest/`)
+        .get(`${import.meta.env.VITE_API_URL}/${type}/newest/`)
         .then((resp) => dispatch(setProjects(resp.data)))
         .catch((err) => console.log(err)),
-    1000
+    1000,
   );
 };

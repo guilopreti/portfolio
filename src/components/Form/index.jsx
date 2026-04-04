@@ -29,9 +29,9 @@ const Form = () => {
 
   const onSubmit = (data) => {
     axios
-      .post(process.env.REACT_APP_FORMSPREE_URL, data)
+      .post(import.meta.env.VITE_FORMSPREE_URL, data)
       .then((_) =>
-        toast.success("E-mail enviado!", { className: "toast-message" })
+        toast.success("E-mail enviado!", { className: "toast-message" }),
       )
       .catch((err) => console.log(err));
   };
