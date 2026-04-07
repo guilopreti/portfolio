@@ -2,7 +2,7 @@ import AboutContainer from "./styled";
 
 const About = () => {
   return (
-    <AboutContainer>
+    <AboutContainer id="about">
       <section className="about-principal-section">
         <figure>
           <img

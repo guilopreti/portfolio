@@ -1,40 +1,82 @@
-import HeaderContainer from "./styled";
+import { HeaderContainer, DesktopNav, NavItem } from "./styled";
 import { GrLinkedinOption } from "react-icons/gr";
 import { BsGithub, BsEnvelope, BsFileEarmarkText } from "react-icons/bs";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { AiOutlineRocket } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
-  const [menuClass, setMenuClass] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
-  const changeClass = () => {
-    if (
-      Number(
-        getComputedStyle(document.getElementById("root")).width.slice(0, -2)
-      ) >= 700
-    ) {
-      return false;
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const sections = ["about", "techs", "experience", "projects", "contact"];
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScrollTo = (id) => {
+    setActiveSection(id);
+    if (id === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
-
-    if (menuClass) {
-      return setMenuClass(null);
-    }
-
-    return setMenuClass("active");
   };
 
+  const navLinks = [
+    {
+      id: "about",
+      label: "Sobre",
+    },
+    {
+      id: "techs",
+      label: "Tecnologias",
+    },
+    {
+      id: "experience",
+      label: "Experiência",
+    },
+    {
+      id: "projects",
+      label: "Projetos",
+    },
+    {
+      id: "contact",
+      label: "Contato",
+    },
+  ];
+
   return (
-    <HeaderContainer>
+    <HeaderContainer $open={menuOpen} $scrolled={scrolled}>
       <section>
-        <div>
+        <div className="social-links-div">
           <a
             href="https://www.linkedin.com/in/guilherme-lopreti-silva/"
             target={"_blank"}
             rel="noreferrer"
             className="linkedin-link"
           >
-            <GrLinkedinOption />
+            <GrLinkedinOption fill="#00e5d4" />
           </a>
           <a
             href="https://github.com/guilopreti"
@@ -42,28 +84,65 @@ const Header = () => {
             rel="noreferrer"
             className="github-link"
           >
-            <BsGithub />
+            <BsGithub fill="#00e5d4" />
           </a>
         </div>
 
-        <nav className={menuClass}>
-          <button onClick={changeClass}></button>
-          <div>
-            <a href="#" onClick={changeClass}>
-              <RiErrorWarningLine /> Sobre
-            </a>
-            <a href="#techs" onClick={changeClass}>
-              <AiOutlineRocket /> Tecnologias
-            </a>
-            <a href="#projects" onClick={changeClass}>
-              <BsFileEarmarkText /> Projetos
-            </a>
-            <a href="#contact" onClick={changeClass}>
-              <BsEnvelope /> Contato
-            </a>
-          </div>
-        </nav>
+        <div
+          className="logo-name-div"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+        >
+          <span>GL</span>
+        </div>
+
+        <DesktopNav>
+          {navLinks.map((link) => (
+            <NavItem
+              key={link.id}
+              onClick={() => handleScrollTo(link.id)}
+              $active={activeSection === link.id}
+            >
+              {link.label}
+              <span className="active-line" />
+              <span className="hover-line" />
+            </NavItem>
+          ))}
+        </DesktopNav>
+
+        <button
+          className="hamburger-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </section>
+
+      {menuOpen && (
+        <nav className="mobile-nav">
+          <a href="#about" onClick={() => setMenuOpen(!menuOpen)}>
+            Sobre
+          </a>
+          <a href="#techs" onClick={() => setMenuOpen(!menuOpen)}>
+            Tecnologias
+          </a>
+          <a href="#experience" onClick={() => setMenuOpen(!menuOpen)}>
+            Experiência
+          </a>
+          <a href="#projects" onClick={() => setMenuOpen(!menuOpen)}>
+            Projetos
+          </a>
+          <a href="#contact" onClick={() => setMenuOpen(!menuOpen)}>
+            Contato
+          </a>
+        </nav>
+      )}
     </HeaderContainer>
   );
 };
