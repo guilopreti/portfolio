@@ -1,0 +1,172 @@
+const experienceState = {
+  workItems: [
+    {
+      id: "declare",
+      company: "Declare Cripto",
+      role: "Desenvolvedor Web Junior",
+      period: "OUT 2025 — FEV 2026",
+      description: [
+        "Desenvolvimento e manutenção full-stack de aplicações web para gerenciamento e declaração de criptoativos.",
+        "Implementação de integrações com serviços externos via APIs REST.",
+        "Criação de novas telas e componentes com foco em usabilidade, além da correção de bugs de fluxo e layout.",
+        "Manutenção de rotas back-end e funções serverless em AWS Lambda para processamento de eventos e automação de fluxos.",
+      ],
+      tags: [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "Python",
+        "Flask",
+        "SQL",
+        "AWS",
+        "Github",
+        "Jenkins",
+        "Scrum",
+      ],
+      type: "work",
+    },
+    {
+      id: "pwc",
+      company: "PwC Brasil",
+      role: "Estagiário em Consultoria de Tecnologia",
+      period: "MAI 2024 — OUT 2025",
+      description: [
+        "Desenvolvimento front-end utilizando HTML, CSS e JavaScript.",
+        "Colaboração em equipes multidisciplinares para entrega de soluções dentro do framework ágil Scrum.",
+        "Desenvolvimento e manutenção de soluções em Guidewire utilizando a linguagem Gosu.",
+        "Aplicação de boas práticas de versionamento e controle de código utilizando Git e Bitbucket.",
+      ],
+      tags: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git",
+        "Bitbucket",
+        "Scrum",
+        "Guidewire",
+        "Gosu",
+      ],
+      type: "work",
+    },
+    {
+      id: "pontuax",
+      company: "PontuaX",
+      role: "Desenvolvedor Full-Stack",
+      period: "DEZ 2022 — ABR 2023",
+      description: [
+        "Desenvolvimento da arquitetura de serviços, banco de dados e aplicativos.",
+        "Construção de páginas com React Admin e implementação de novas funcionalidades em aplicativos mobile.",
+        "Elaboração de melhorias e correção de bugs.",
+        "Revisão das soluções propostas pelos pares, sugerindo e auxiliando em eventuais ajustes.",
+      ],
+      tags: [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "NodeJS",
+        "TypeORM",
+        "SQL",
+        "Git",
+        "React Native",
+      ],
+      type: "work",
+    },
+    {
+      id: "kenzie-monitor",
+      company: "Kenzie Academy Brasil",
+      role: "Monitor de Ensino",
+      period: "FEV 2022 — JUN 2022",
+      description: [
+        "Contato ativo com os alunos e assistência no canal de dúvidas sobre programação Front-End.",
+        "Correção de entregas e suporte técnico personalizado.",
+        "Elaboração de relatórios sobre o desempenho técnico dos estudantes e aplicação de testes técnicos.",
+      ],
+      tags: ["JavaScript", "React", "HTML", "CSS", "Jest", "Git"],
+      type: "work",
+    },
+  ],
+  educationItems: [
+    {
+      id: "fatec-dsm",
+      company: "Faculdade de Tecnologia de Cotia",
+      role: "Desenvolvimento de Software Multiplataforma",
+      period: "AGO 2023 — JUL 2026",
+      current: true,
+      description: [
+        "Curso superior tecnológico com foco em desenvolvimento web, mobile e multiplataforma.",
+        "Aprofundamento em arquitetura de software, banco de dados, engenharia de software e metodologias ágeis.",
+      ],
+      tags: [
+        "React ",
+        "NodeJS",
+        "Python",
+        "Mobile",
+        "Azure",
+        "MySQL",
+        "MongoDB",
+        "TDD",
+        "Estrutura de Dados",
+        "UX",
+        "Segurança",
+        "Machine Learning",
+      ],
+      type: "education",
+    },
+    {
+      id: "kenzie-academy",
+      company: "Kenzie Academy Brasil",
+      role: "Desenvolvimento Web Full-Stack",
+      period: "SET 2021 — SET 2022",
+      current: false,
+      description: [
+        "Bootcamp intensivo de 12 meses com foco em desenvolvimento web full-stack.",
+        "Formação em tecnologias modernas de Front End e Back End com projetos práticos em equipe.",
+      ],
+      tags: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "NodeJS",
+        "Express",
+        "Jest",
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Docker",
+      ],
+      type: "education",
+    },
+    {
+      id: "fatec-gestao",
+      company: "Faculdade de Tecnologia de Cotia",
+      role: "Gestão Empresarial",
+      period: "FEV 2018 — DEZ 2020",
+      current: false,
+      description: [
+        "Curso superior em gestão com disciplinas de liderança, finanças, marketing e gestão de projetos.",
+      ],
+      tags: [
+        "Gestão de Projetos",
+        "Liderança",
+        "Finanças",
+        "Marketing ",
+        "Logística",
+        "Empreendedorismo",
+        "Comunicação",
+      ],
+      type: "education",
+    },
+  ],
+};
+
+const experienceReducer = (state = experienceState, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+export default experienceReducer;
