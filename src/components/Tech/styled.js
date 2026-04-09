@@ -1,54 +1,59 @@
 import styled from "styled-components";
 
-const TechContainer = styled.li`
-  width: 130px;
-  color: var(--turquoise);
+const TechContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  cursor: default;
+  transition: all 300ms;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
 
-  .tech-name-div {
-    background-color: var(--black-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    border-radius: 15px;
-    opacity: ${(props) => (props.active ? 1 : 0)};
-    height: 30px;
-    white-space: nowrap;
-    transition: 0.6s;
+  &:hover {
+    border-color: rgba(0, 229, 212, 0.3);
+    background: rgba(0, 229, 212, 0.05);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 229, 212, 0.08);
+  }
 
-    h6 {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-      align-items: center;
-      gap: 4px;
-      margin-top: 14px;
-    }
-
-    h6 span {
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid;
-      border-top-color: var(--black-blue);
-      width: 20px;
-    }
+  &:hover span.tech-label {
+    color: rgba(0, 229, 212, 0.8);
   }
 
   .tech-icon-div {
-    width: 100%;
-    height: 80px;
-    background-color: var(--black-blue);
-    border-radius: 8px;
+    width: 3rem;
+    height: 3rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    justify-content: center;
 
     svg {
-      width: 55px;
-      height: 55px;
+      width: 100%;
+      height: 100%;
+      max-width: 44px;
+      max-height: 44px;
+      color: #00e5d4;
     }
+
+    span {
+      color: #00e5d4;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .tech-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    transition: color 200ms;
+    line-height: 1.25;
   }
 `;
 
