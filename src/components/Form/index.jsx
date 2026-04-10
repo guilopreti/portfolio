@@ -28,11 +28,21 @@ const Form = () => {
   } = useForm({ resolver: yupResolver(formSchema) });
 
   const onSubmit = (data) => {
-    axios
-      .post(import.meta.env.VITE_FORMSPREE_URL, data)
-      .then((_) =>
-        toast.success("E-mail enviado!", { className: "toast-message" }),
-      )
+    toast
+      .promise(axios.post(import.meta.env.VITE_FORMSPREE_URL, data), {
+        pending: {
+          render: "Enviando mensagem...",
+          className: "toast-pending",
+        },
+        success: {
+          render: "Mensagem enviada com sucesso!",
+          className: "toast-success",
+        },
+        error: {
+          render: "Erro ao enviar a mensagem. Tente novamente.",
+          className: "toast-error",
+        },
+      })
       .catch((err) => console.log(err));
   };
 
@@ -43,54 +53,68 @@ const Form = () => {
         error={errors.name ? true : false}
         onChange={(e) => setNameValue(e.target.value)}
       >
-        <input name="name" {...register("name")} />
         <label>Nome</label>
+        <input
+          name="name"
+          placeholder="Seu nome completo"
+          {...register("name")}
+        />
         {errors.name && <span>{errors.name?.message}</span>}
       </FormDivContainer>
 
-      <FormDivContainer
-        isFilled={emailValue}
-        className="smaller-form-div"
-        error={errors.email ? true : false}
-        onChange={(e) => setEmailValue(e.target.value)}
-      >
-        <input name="email" {...register("email")} />
-        <label>Email</label>
-        {errors.email && <span>{errors.email?.message}</span>}
-      </FormDivContainer>
+      <div className="smaller-form-div">
+        <FormDivContainer
+          isFilled={emailValue}
+          error={errors.email ? true : false}
+          onChange={(e) => setEmailValue(e.target.value)}
+        >
+          <label>Email</label>
+          <input
+            name="email"
+            placeholder="seu@email.com"
+            {...register("email")}
+          />
+          {errors.email && <span>{errors.email?.message}</span>}
+        </FormDivContainer>
 
-      <FormDivContainer
-        isFilled={phoneValue}
-        className="smaller-form-div"
-        onChange={(e) => setPhoneValue(e.target.value)}
-      >
-        <InputMask
-          mask={mask}
-          {...register("phone")}
-          onBlur={(e) => {
-            if (e.target.value.replace("_", "").length === 14) {
-              setMask("(99) 9999-9999");
-            }
-          }}
-          onFocus={(e) => {
-            if (e.target.value.replace("_", "").length === 14) {
-              setMask("(99) 99999-9999");
-            }
-          }}
-        />
-        <label>Telefone</label>
-      </FormDivContainer>
+        <FormDivContainer
+          isFilled={phoneValue}
+          onChange={(e) => setPhoneValue(e.target.value)}
+        >
+          <label>Telefone</label>
+          <InputMask
+            mask={mask}
+            maskChar={null}
+            placeholder="(11) 99999-9999"
+            {...register("phone")}
+            onBlur={(e) => {
+              if (e.target.value.replace("_", "").length === 14) {
+                setMask("(99) 9999-9999");
+              }
+            }}
+            onFocus={(e) => {
+              if (e.target.value.replace("_", "").length === 14) {
+                setMask("(99) 99999-9999");
+              }
+            }}
+          />
+        </FormDivContainer>
+      </div>
 
       <FormDivContainer
         isFilled={messageValue}
         error={errors.message ? true : false}
         onChange={(e) => setMessageValue(e.target.value)}
       >
-        <textarea name="message" {...register("message")} />
         <label>Mensagem</label>
+        <textarea
+          name="message"
+          placeholder="Conte-me sobre seu projeto..."
+          {...register("message")}
+        />
         {errors.message && <span>{errors.message?.message}</span>}
       </FormDivContainer>
-      <button>Enviar</button>
+      <button>Enviar Mensagem</button>
     </FormContainer>
   );
 };

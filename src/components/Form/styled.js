@@ -1,42 +1,50 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.form`
-  max-width: 400px;
-  width: 94%;
-  border: 4px solid var(--white-fixed);
-  border-radius: 5px;
-  padding: 15px;
   display: flex;
-  background-color: var(--black-blue);
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5%;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0d1326;
 
   .smaller-form-div {
-    width: 47%;
+    display: grid;
+    gap: 1.25rem;
   }
 
   button {
-    width: 50%;
-    background-color: var(--turquoise);
-    color: var(--black-blue);
-    padding: 15px;
-    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
     font-weight: 500;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    color: #0a0e1a;
+    transition: all 300ms;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #00e5d4, #00bcd4);
+    box-shadow: 0 0 20px rgba(0, 229, 212, 0.25);
   }
 
   button:hover {
-    filter: brightness(0.8);
+    box-shadow: 0 0 30px rgba(0, 229, 212, 0.45);
+    transform: translateY(-1px);
+  }
+
+  @media (min-width: 640px) {
+    .smaller-form-div {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 `;
 
 export const FormDivContainer = styled.div`
-  position: relative;
-  width: 100%;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
 
   ${({ error }) =>
     error &&
@@ -51,56 +59,40 @@ export const FormDivContainer = styled.div`
 
   span {
     color: #f45;
-    padding-top: 10px;
   }
 
   input,
   textarea {
-    padding: 12px;
-    background: var(--black-blue);
-    color: var(--white-fixed);
-    border: 1px solid var(--white-fixed);
-    border-radius: 6px;
-    width: 100%;
-    font-size: 16px;
-    max-width: 100%;
-    min-width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-family: "Inter", sans-serif;
+    outline: none;
+    transition: all 200ms;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    &:focus {
+      border-color: rgba(0, 229, 212, 0.4);
+      background: rgba(0, 229, 212, 0.03);
+    }
   }
 
   textarea {
-    height: 145px;
+    resize: none;
+    height: 111px;
   }
 
   label {
-    position: absolute;
-    top: ${({ isFilled }) => (!isFilled ? "13px" : "-10px")};
-    left: ${({ isFilled }) => (!isFilled ? "12px" : "8px")};
-    padding: 0px 5px;
-    transition: all 0.2s ease 0s;
-    color: var(--white-fixed);
-    background-color: var(--black-blue);
-    font-weight: 600;
-    font-size: ${({ isFilled }) => (!isFilled ? "15px" : "14px")};
-    pointer-events: none;
-  }
-
-  input:focus,
-  textarea:focus {
-    border-color: var(--turquoise);
-    outline: 0px;
-  }
-
-  input:focus ~ label,
-  textarea:focus ~ label {
-    color: var(--turquoise);
-    top: -10px;
-    left: 8px;
-    font-size: 14px;
-  }
-
-  input:hover,
-  textarea:hover,
-  label:hover {
-    border-color: var(--turquoise);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 `;
