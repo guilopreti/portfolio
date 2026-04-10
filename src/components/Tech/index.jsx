@@ -1,4 +1,3 @@
-import { useState } from "react";
 import TechContainer from "./styled";
 
 const Tech = ({ name, icon }) => {

@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import Tech from "../Tech";
 import TechsContainer from "./styled";
 import TechCategory from "../TechCategory";
 

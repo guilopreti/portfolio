@@ -1,8 +1,6 @@
 import { HeaderContainer, DesktopNav, NavItem } from "./styled";
 import { GrLinkedinOption } from "react-icons/gr";
-import { BsGithub, BsEnvelope, BsFileEarmarkText } from "react-icons/bs";
-import { RiErrorWarningLine } from "react-icons/ri";
-import { AiOutlineRocket } from "react-icons/ai";
+import { BsGithub } from "react-icons/bs";
 import { useEffect, useState } from "react";
 
 const Header = () => {
