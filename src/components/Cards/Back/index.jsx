@@ -1,18 +1,37 @@
-import { SiGithub } from "react-icons/si";
+import { FiGithub } from "react-icons/fi";
+import { LuServer } from "react-icons/lu";
 import BackCardContainer from "./styled";
 
 const BackCard = ({ title, description, code_url, techs }) => {
   return (
     <BackCardContainer>
-      <h4>{title}</h4>
+      <div className="backend-card-accent-bar"></div>
 
-      <p>{description}</p>
-      <p>Tecnologias: {techs.map((tech) => tech.name).join(", ")}</p>
+      <div className="backend-card-content">
+        <div className="backend-card-header">
+          <div>
+            <LuServer size={27} />
+          </div>
 
-      <div className="preview-code-div">
-        <a href={code_url} target="_blank" rel="noreferrer">
-          <SiGithub /> Código
-        </a>
+          <div>
+            <div>Back End</div>
+            <h3>{title}</h3>
+          </div>
+        </div>
+
+        <p>{description}</p>
+
+        <div className="backend-card-techs">
+          {techs.map((tech) => (
+            <span key={`${title}_${tech.name}`}>{tech.name}</span>
+          ))}
+        </div>
+
+        <div className="preview-code-div">
+          <a href={code_url} target="_blank" rel="noreferrer">
+            <FiGithub size={13} /> Código
+          </a>
+        </div>
       </div>
     </BackCardContainer>
   );

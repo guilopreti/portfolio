@@ -1,6 +1,6 @@
 import FrontCardContainer from "./styled";
-import { AiOutlineLink } from "react-icons/ai";
-import { SiGithub } from "react-icons/si";
+import { LuExternalLink } from "react-icons/lu";
+import { FiGithub } from "react-icons/fi";
 
 const FrontCard = ({
   title,
@@ -12,21 +12,32 @@ const FrontCard = ({
 }) => {
   return (
     <FrontCardContainer>
-      <h4>{title}</h4>
       <figure>
         <img src={img_url} alt={title} />
         <figcaption>{title}</figcaption>
+        <div className="image-gradient"></div>
+        <div>Front End</div>
       </figure>
-      <p>{description}</p>
-      <p>Tecnologias: {techs.map((tech) => tech.name).join(", ")}</p>
 
-      <div className="preview-code-div">
-        <a href={preview_url} target="_blank" rel="noreferrer">
-          <AiOutlineLink /> Aplicação
-        </a>
-        <a href={code_url} target="_blank" rel="noreferrer">
-          <SiGithub /> Código
-        </a>
+      <div className="frontend-card-content">
+        <h3>{title}</h3>
+
+        <p>{description}</p>
+
+        <div className="frontend-card-techs">
+          {techs.map((tech) => (
+            <span key={`${title}_${tech.name}`}>{tech.name}</span>
+          ))}
+        </div>
+
+        <div className="preview-code-div">
+          <a href={preview_url} target="_blank" rel="noreferrer">
+            <LuExternalLink size={13} /> Aplicação
+          </a>
+          <a href={code_url} target="_blank" rel="noreferrer">
+            <FiGithub size={13} /> Código
+          </a>
+        </div>
       </div>
     </FrontCardContainer>
   );
