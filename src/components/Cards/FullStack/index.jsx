@@ -50,9 +50,11 @@ const FullStackCard = ({
             </div>
 
             <div className="preview-code-div">
-              <a href={preview_url} target="_blank" rel="noreferrer">
-                <LuExternalLink size={13} /> Aplicação
-              </a>
+              {preview_url && (
+                <a href={preview_url} target="_blank" rel="noreferrer">
+                  <LuExternalLink size={13} /> Aplicação
+                </a>
+              )}
               <a href={front_code_url} target="_blank" rel="noreferrer">
                 <FiGithub size={13} /> Código
               </a>

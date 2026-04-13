@@ -66,17 +66,26 @@ export const HeaderContainer = styled.header`
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    span {
-      color: #ffffff;
-      font-family: "Space Grotesk", sans-serif;
-      letter-spacing: 0.1em;
-      font-size: 0.875rem;
-      opacity: 0.6;
-      transition: opacity 200ms;
+    svg {
+      transition: all 300ms ease;
+      filter: drop-shadow(0 0 0 rgba(0, 229, 212, 0));
+
+      circle.dashed-ring {
+        transition: all 400ms ease;
+      }
 
       &:hover {
-        opacity: 1;
+        filter: drop-shadow(0 0 10px rgba(0, 229, 212, 0.3));
+        transform: scale(1.05);
+
+        circle.dashed-ring {
+          stroke-opacity: 0.8;
+          stroke-dasharray: 8 4;
+        }
       }
     }
   }
@@ -143,9 +152,7 @@ export const HeaderContainer = styled.header`
 
   @media (min-width: 768px) {
     .logo-name-div {
-      position: relative;
-      margin-left: auto;
-      left: 0;
+      display: none;
     }
 
     .hamburger-btn {
@@ -159,8 +166,7 @@ export const HeaderContainer = styled.header`
 
   @media (min-width: 1024px) {
     .logo-name-div {
-      position: absolute;
-      left: 50%;
+      display: flex;
     }
   }
 `;
@@ -171,13 +177,13 @@ export const DesktopNav = styled.nav`
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.15rem;
   }
 `;
 
 export const NavItem = styled.button`
   position: relative;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.625rem;
   font-size: 0.875rem;
   font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.7);
@@ -190,8 +196,8 @@ export const NavItem = styled.button`
   .active-line {
     position: absolute;
     bottom: 0;
-    left: 1rem;
-    right: 1rem;
+    left: 0.625rem;
+    right: 0.625rem;
     height: 1px;
     background-color: #00e5d4;
     transition: all 300ms;
@@ -203,8 +209,8 @@ export const NavItem = styled.button`
   .hover-line {
     position: absolute;
     bottom: 0;
-    left: 1rem;
-    right: 1rem;
+    left: 0.625rem;
+    right: 0.625rem;
     height: 1px;
     background-color: rgba(0, 229, 212, 0.4);
     transform: scaleX(0);

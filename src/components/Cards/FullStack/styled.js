@@ -106,7 +106,7 @@ export const FullStackCardContainer = styled.li`
     img {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: cover;
     }
 
     figcaption {
@@ -145,7 +145,7 @@ export const FullStackCardContainer = styled.li`
     display: flex;
     flex-wrap: wrap;
     gap: 0.375rem;
-    ${(props) => props.type === "back" && "margin-top: auto"};
+    margin-top: auto;
 
     span {
       padding: 0.125rem 0.5rem;

@@ -29,6 +29,7 @@ const AboutContainer = styled.section`
       linear-gradient(to right, rgba(0, 229, 212, 0.06) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 229, 212, 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
+    background-position: center top;
   }
 
   .radial-gradient-overlay {

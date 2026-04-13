@@ -91,6 +91,7 @@ const FrontCardContainer = styled.li`
     display: flex;
     flex-wrap: wrap;
     gap: 0.375rem;
+    margin-top: auto;
 
     span {
       padding: 0.125rem 0.5rem;

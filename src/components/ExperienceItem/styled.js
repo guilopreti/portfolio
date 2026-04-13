@@ -102,7 +102,8 @@ const ExperienceItemContainer = styled.li`
       font-size: 0.75rem;
       font-family: "Inter", sans-serif;
       letter-spacing: 0.05em;
-      color: ${(props) => `${props.$color}80`};
+      color: ${(props) =>
+        props.$color === "#7c3aed" ? "#a78bfa" : `${props.$color}80`};
     }
   }
 
@@ -169,9 +170,14 @@ const ExperienceItemContainer = styled.li`
       border-radius: 0.25rem;
       font-size: 0.75rem;
       font-family: "Inter", sans-serif;
-      background: ${(props) => `${props.$color}08`};
-      color: ${(props) => `${props.$color}aa`};
-      border: ${(props) => `1px solid ${props.$color}20`};
+      color: ${(props) =>
+        props.$color === "#7c3aed" ? "#a78bfa" : `${props.$color}aa`};
+      background: ${(props) =>
+        props.$color === "#7c3aed" ? "#a78bfa10" : `${props.$color}08`};
+      border: ${(props) =>
+        props.$color === "#7c3aed"
+          ? "1px solid #a78bfa25"
+          : `1px solid ${props.$color}20`};
     }
   }
 `;

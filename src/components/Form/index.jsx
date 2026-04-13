@@ -24,6 +24,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(formSchema) });
 
@@ -42,6 +43,9 @@ const Form = () => {
           render: "Erro ao enviar a mensagem. Tente novamente.",
           className: "toast-error",
         },
+      })
+      .then(() => {
+        reset();
       })
       .catch((err) => console.log(err));
   };
