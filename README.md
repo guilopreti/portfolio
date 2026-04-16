@@ -2,6 +2,8 @@
 
 Bem-vindo(a) ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minha trajetória, habilidades e os projetos que construí ao longo da minha carreira como Desenvolvedor Full Stack.
 
+Acesse em: https://guilhermelopreti.vercel.app/
+
 ## 🚀 Visão Geral
 
 A aplicação é uma **Single Page Application (SPA)** focada em performance, transições suaves e interatividade. Além de listar minhas experiências e tecnologias, o portfólio se comunica ativamente com uma API própria para buscar os meus projetos dinamicamente no banco de dados.
