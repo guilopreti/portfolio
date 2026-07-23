@@ -91,8 +91,8 @@ const experienceState = {
       id: "fatec-dsm",
       company: "Faculdade de Tecnologia de Cotia",
       role: "Desenvolvimento de Software Multiplataforma",
-      period: "AGO 2023 — JUL 2026",
-      current: true,
+      period: "AGO 2023 — JUN 2026",
+      current: false,
       description: [
         "Curso superior tecnológico com foco em desenvolvimento web, mobile e multiplataforma.",
         "Aprofundamento em arquitetura de software, banco de dados, engenharia de software e metodologias ágeis.",
