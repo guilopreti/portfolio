@@ -1,6 +1,27 @@
 const experienceState = {
   workItems: [
     {
+      id: "passarelli",
+      company: "Passarelli",
+      role: "Desenvolvedor Low Code I",
+      period: "OUT 2026 — ATUAL",
+      current: true,
+      description: [
+        "Desenvolvimento de automações e fluxos de processos de negócio na plataforma low-code SYDLE ONE.",
+        "Atuação em time ágil (Scrum), com foco em modelagem de processos e implementação de regras de negócio.",
+      ],
+      tags: [
+        "SYDLE ONE",
+        "JavaScript",
+        "Elasticsearch",
+        "APIs",
+        "BPM",
+        "BPMN",
+        "Scrum",
+      ],
+      type: "work",
+    },
+    {
       id: "declare",
       company: "Declare Cripto",
       role: "Desenvolvedor Web Junior",

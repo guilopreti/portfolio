@@ -19,11 +19,12 @@ const ExperienceItem = ({ item, accentColor }) => {
           <div className="card-header-content">
             <div>
               <span>{item.company}</span>
-              {!item.current && item.type === "education" ? (
-                <span>Concluído</span>
-              ) : (
-                item.current && <span>Cursando</span>
-              )}
+              {item.type === "education" &&
+                (!item.current ? (
+                  <span>Concluído</span>
+                ) : (
+                  <span>Cursando</span>
+                ))}
             </div>
 
             <p>{item.role}</p>
